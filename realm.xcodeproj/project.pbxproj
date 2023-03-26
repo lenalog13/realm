@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4DAC901629D047C000FB3634 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC901529D047C000FB3634 /* AppDelegate.swift */; };
 		4DAC901829D047C000FB3634 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC901729D047C000FB3634 /* SceneDelegate.swift */; };
-		4DAC901A29D047C000FB3634 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC901929D047C000FB3634 /* ViewController.swift */; };
 		4DAC901D29D047C000FB3634 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAC901B29D047C000FB3634 /* Main.storyboard */; };
 		4DAC901F29D047C100FB3634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DAC901E29D047C100FB3634 /* Assets.xcassets */; };
 		4DAC902229D047C100FB3634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAC902029D047C100FB3634 /* LaunchScreen.storyboard */; };
@@ -18,13 +17,15 @@
 		4DAC903129D04AD200FB3634 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903029D04AD200FB3634 /* TaskList.swift */; };
 		4DAC903429D04B4C00FB3634 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903329D04B4C00FB3634 /* DataManager.swift */; };
 		4DAC903629D04B6300FB3634 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903529D04B6300FB3634 /* StorageManager.swift */; };
+		4DAC903B29D054BA00FB3634 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903A29D054BA00FB3634 /* TaskListViewController.swift */; };
+		4DAC903D29D054E900FB3634 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903C29D054E900FB3634 /* TaskViewController.swift */; };
+		4DAC903F29D0551100FB3634 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903E29D0551100FB3634 /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4DAC901229D047C000FB3634 /* realm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = realm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAC901529D047C000FB3634 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DAC901729D047C000FB3634 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4DAC901929D047C000FB3634 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4DAC901C29D047C000FB3634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DAC901E29D047C100FB3634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DAC902129D047C100FB3634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +33,9 @@
 		4DAC903029D04AD200FB3634 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 		4DAC903329D04B4C00FB3634 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4DAC903529D04B6300FB3634 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		4DAC903A29D054BA00FB3634 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		4DAC903C29D054E900FB3634 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		4DAC903E29D0551100FB3634 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,9 @@
 		4DAC902E29D04A3D00FB3634 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4DAC901929D047C000FB3634 /* ViewController.swift */,
+				4DAC903A29D054BA00FB3634 /* TaskListViewController.swift */,
+				4DAC903C29D054E900FB3634 /* TaskViewController.swift */,
+				4DAC903E29D0551100FB3634 /* AlertController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -207,11 +213,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DAC903129D04AD200FB3634 /* TaskList.swift in Sources */,
+				4DAC903D29D054E900FB3634 /* TaskViewController.swift in Sources */,
 				4DAC903429D04B4C00FB3634 /* DataManager.swift in Sources */,
-				4DAC901A29D047C000FB3634 /* ViewController.swift in Sources */,
 				4DAC903629D04B6300FB3634 /* StorageManager.swift in Sources */,
+				4DAC903F29D0551100FB3634 /* AlertController.swift in Sources */,
 				4DAC901629D047C000FB3634 /* AppDelegate.swift in Sources */,
 				4DAC901829D047C000FB3634 /* SceneDelegate.swift in Sources */,
+				4DAC903B29D054BA00FB3634 /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
