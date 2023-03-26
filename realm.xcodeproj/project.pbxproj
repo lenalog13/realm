@@ -104,8 +104,8 @@
 		4DAC903729D04B8200FB3634 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				4DAC902029D047C100FB3634 /* LaunchScreen.storyboard */,
 				4DAC901B29D047C000FB3634 /* Main.storyboard */,
+				4DAC902029D047C100FB3634 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
