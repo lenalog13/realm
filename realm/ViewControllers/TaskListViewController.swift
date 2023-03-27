@@ -9,15 +9,13 @@ import UIKit
 import RealmSwift
 
 class TaskListViewController: UITableViewController {
+    
+    var tasksList: Results<TaskList>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        createTempData()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -76,6 +74,11 @@ class TaskListViewController: UITableViewController {
         return true
     }
     */
+    
+    // MARK: - Table View Data Source
+    
+    
+    
 
     /*
     // MARK: - Navigation
@@ -86,5 +89,18 @@ class TaskListViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    private func createTempData() {
+        DataManager.shared.createTempData { [unowned self] in
+            tableView.reloadData()
+        }
+    }
+}
 
+    //MARK: - Alert Conteoller
+
+extension TaskListViewController {
+    
+    
+    
 }
