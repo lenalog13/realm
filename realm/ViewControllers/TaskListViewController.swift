@@ -53,7 +53,7 @@ class TaskListViewController: UITableViewController {
     
     // MARK: - Table View Data Source
     
-    /*
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let taskList = taskLists[indexPath.row]
@@ -64,10 +64,25 @@ class TaskListViewController: UITableViewController {
         }
         
         let editAction = UIContextualAction(style: .normal, title: "Edit") { [unowned self]  _, _, isDone in
-            showAlert
+            showAlert(with: taskList) {
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            isDone(true)
         }
+        
+        let doneAction = UIContextualAction(style: .normal, title: "Done") { _, _, isDone in
+            StorageManager.shared.done(taskList)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            isDone(true)
+        }
+        
+        editAction.backgroundColor = .orange
+        doneAction.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        
+        
+        return UISwipeActionsConfiguration(actions: [doneAction, editAction, deleteAction])
     }
-     */
+     
 
     
     // MARK: - Navigation
@@ -84,7 +99,7 @@ class TaskListViewController: UITableViewController {
     
     
     @objc private func addButtonPressed() {
-        
+        showAlert()
     }
     
     private func createTempData() {
@@ -99,6 +114,27 @@ class TaskListViewController: UITableViewController {
 
 extension TaskListViewController {
     
+    private func showAlert(with taskList: TaskList? = nil, completion: (() -> Void)? = nil) {
+        let title = taskList == nil ? "New List" : "Edit List"
+        let alert = UIAlertController.createAlert(withTitle: title, andMessage: "Please set title for new task list")
+        
+        alert.action(with: taskList) { [weak self] newValue in
+            if let taskList = taskList, let completion = completion {
+                StorageManager.shared.edit(taskList, newValue: newValue)
+                completion()
+            } else {
+                self?.save(taskList: newValue)
+            }
+        }
+        
+        present(alert, animated: true)
+    }
     
+    private func save(taskList: String) {
+        StorageManager.shared.save(taskList) { taskList in
+            let rowIndex = IndexPath(row: taskLists.index(of: taskList) ?? 0, section: 0)
+            tableView.insertRows(at: [rowIndex], with: .automatic)
+        }
+    }
     
 }
