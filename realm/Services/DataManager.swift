@@ -31,14 +31,16 @@ class DataManager {
             shoppingList.tasks.append(apples)
             
             
-            let moviesList = TaskList(value: [
-            "Movies List",
-            Date(),
-            [
-                ["Best film ever"],
-                ["The best of the best", "Must have", Date(), true]
-            ]
-            ])
+            let moviesList = TaskList(
+                value: [
+                    "Movies List",
+                    Date(),
+                    [
+                        ["Best film ever"],
+                        ["The best of the best", "Must have", Date(), true]
+                    ]
+                ]
+            )
             
             DispatchQueue.main.async {
                 StorageManager.shared.save([shoppingList, moviesList])

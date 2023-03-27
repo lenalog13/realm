@@ -19,13 +19,25 @@ class StorageManager {
     // MARK: - Task List
     
     func save(_ taskLists: [TaskList]) {
-        
+        write {
+            realm.add(taskLists)
+        }
     }
+    
+
     
     
     // MARK: - Tasks
     
     
-    
+    private func write(completion: () -> Void) {
+        do {
+            try realm.write {
+                completion()
+            }
+        } catch {
+            print(error)
+        }
+    }
     
 }

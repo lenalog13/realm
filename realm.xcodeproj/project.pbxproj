@@ -75,7 +75,8 @@
 				4DAC902F29D04A7800FB3634 /* Models */,
 				4DAC903729D04B8200FB3634 /* Storyboards */,
 				4DAC903829D04C2900FB3634 /* App */,
-				4DAC903929D04C8600FB3634 /* Resurces */,
+				4DAC902329D047C100FB3634 /* Info.plist */,
+				4DAC901E29D047C100FB3634 /* Assets.xcassets */,
 			);
 			path = realm;
 			sourceTree = "<group>";
@@ -121,17 +122,8 @@
 			children = (
 				4DAC901529D047C000FB3634 /* AppDelegate.swift */,
 				4DAC901729D047C000FB3634 /* SceneDelegate.swift */,
-				4DAC902329D047C100FB3634 /* Info.plist */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		4DAC903929D04C8600FB3634 /* Resurces */ = {
-			isa = PBXGroup;
-			children = (
-				4DAC901E29D047C100FB3634 /* Assets.xcassets */,
-			);
-			path = Resurces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

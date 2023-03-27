@@ -10,35 +10,37 @@ import RealmSwift
 
 class TaskListViewController: UITableViewController {
     
-    var tasksList: Results<TaskList>!
+    var taskLists: Results<TaskList>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         createTempData()
+        taskLists = StorageManager.shared.realm.objects(TaskList.self)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        taskLists.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskListCell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        let taskList = taskLists[indexPath.row]
+        content.text = taskList.name
+        content.secondaryText = "\(taskList.tasks.count)"
+        cell.contentConfiguration = content
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
