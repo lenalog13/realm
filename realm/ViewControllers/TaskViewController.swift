@@ -9,6 +9,8 @@ import UIKit
 import RealmSwift
 
 class TaskViewController: UITableViewController {
+    
+    var taskList: TaskList!
 
     override func viewDidLoad() {
         super.viewDidLoad()

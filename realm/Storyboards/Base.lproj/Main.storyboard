@@ -10,7 +10,7 @@
         <!--TaskList-->
         <scene sceneID="pHK-OD-WeD">
             <objects>
-                <tableViewController id="Lmq-v5-JqC" sceneMemberID="viewController">
+                <tableViewController id="Lmq-v5-JqC" customClass="TaskListViewController" customModule="realm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="W1K-IF-V8x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,6 +22,9 @@
                                 <segment title="First"/>
                                 <segment title="Second"/>
                             </segments>
+                            <connections>
+                                <action selector="sortingList:" destination="7gC-mD-CaS" eventType="valueChanged" id="VSs-tM-Pys"/>
+                            </connections>
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskListCell" textLabel="q9r-MS-5bh" detailTextLabel="bHV-Il-m69" style="IBUITableViewCellStyleValue1" id="AHU-ch-7Ko">
@@ -60,13 +63,14 @@
                     <navigationItem key="navigationItem" title="TaskList" id="Zrv-Vu-NXn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7og-fT-Qke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="7gC-mD-CaS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="697.5" y="53.87323943661972"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="oKn-IY-GKG">
             <objects>
-                <tableViewController id="IME-Ho-gGD" sceneMemberID="viewController">
+                <tableViewController id="IME-Ho-gGD" customClass="TaskViewController" customModule="realm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aq4-Fl-rH3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
