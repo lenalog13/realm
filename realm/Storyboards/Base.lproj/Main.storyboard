@@ -23,7 +23,7 @@
                                 <segment title="Second"/>
                             </segments>
                             <connections>
-                                <action selector="sortingList:" destination="7gC-mD-CaS" eventType="valueChanged" id="VSs-tM-Pys"/>
+                                <action selector="sortingList:" destination="Lmq-v5-JqC" eventType="valueChanged" id="szU-Fv-m1m"/>
                             </connections>
                         </segmentedControl>
                         <prototypes>
@@ -63,7 +63,6 @@
                     <navigationItem key="navigationItem" title="TaskList" id="Zrv-Vu-NXn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7og-fT-Qke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="7gC-mD-CaS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="697.5" y="53.87323943661972"/>
         </scene>
