@@ -45,7 +45,12 @@ class TaskListViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         let taskList = taskLists[indexPath.row]
         content.text = taskList.name
-        content.secondaryText = "\(taskList.tasks.count)"
+        let count = countOfTasks(taskList)
+        if !taskList.tasks.isEmpty && count == 0 {
+            content.secondaryText = "✔️"
+        } else {
+            content.secondaryText = "\(count)"
+        }
         cell.contentConfiguration = content
         return cell
     }
@@ -106,6 +111,16 @@ class TaskListViewController: UITableViewController {
         DataManager.shared.createTempData { [unowned self] in
             tableView.reloadData()
         }
+    }
+    
+    private func countOfTasks(_ taskList: TaskList) -> Int {
+        var count = 0
+        for task in taskList.tasks {
+            if task.isComlete == false {
+                count += 1
+            }
+        }
+        return count
     }
 }
 
