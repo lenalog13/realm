@@ -59,9 +59,9 @@ class TaskViewController: UITableViewController {
     
     // MARK: - Navigation
         
-            @objc func addButtonPressed() {
-                
-            }
+    @objc func addButtonPressed() {
+         showAlert()
+    }
 }
 
 
@@ -69,6 +69,25 @@ class TaskViewController: UITableViewController {
 
 extension TaskViewController {
     
+    func showAlert(with task: Task? = nil, completion: (() -> Void)? = nil) {
+        let title = task == nil ? "New task" : "Edit task"
+        let alert = UIAlertController(title: title, message: "What do you want to do?", preferredStyle: .alert)
+        alert.action(with: task) { [weak self] name, note in
+            if let task = task, let completion = completion {
+                StorageManager.shared.edit(task, newName: name, newNote: note)
+                completion()
+            } else {
+                self?.save(task: name, withNote: note)
+            }
+        }
+        
+        present(alert, animated: true)
+    }
     
-    
+    private func save(task: String, withNote note: String) {
+        StorageManager.shared.save(task, withNote: note, to: taskList) { task in
+            let rowIndex = IndexPath(row: currentTask.index(of: task) ?? 0, section: 0)
+            tableView.insertRows(at: [rowIndex], with: .automatic)
+        }
+    }
 }

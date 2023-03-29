@@ -55,6 +55,12 @@ class StorageManager {
     
     // MARK: - Tasks
     
+    func save(_ task: Task, to taskList: TaskList) {
+        write {
+            taskList.tasks.append(task)
+        }
+    }
+    
     func save(_ task: String, withNote: String, to taskList: TaskList, completion: (Task) -> Void) {
         write {
             let task = Task(value: [task, withNote])
@@ -63,6 +69,27 @@ class StorageManager {
         }
     }
     
+    func delete(_ task: Task) {
+        write {
+            realm.delete(task)
+        }
+    }
+    
+    func edit(_ task: Task, newName: String, newNote: String) {
+        write {
+            task.name = newName
+            task.note = newNote
+        }
+    }
+    
+    func done(_ task: Task) {
+        write {
+            task.setValue(true, forKey: "isComlete")
+        }
+    }
+    
+    
+    //MARK: - Private Func
     
     private func write(completion: () -> Void) {
         do {
