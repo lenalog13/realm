@@ -19,7 +19,8 @@
 		4DAC903629D04B6300FB3634 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903529D04B6300FB3634 /* StorageManager.swift */; };
 		4DAC903B29D054BA00FB3634 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903A29D054BA00FB3634 /* TaskListViewController.swift */; };
 		4DAC903D29D054E900FB3634 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903C29D054E900FB3634 /* TaskViewController.swift */; };
-		4DAC903F29D0551100FB3634 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903E29D0551100FB3634 /* AlertController.swift */; };
+		4DAC903F29D0551100FB3634 /* Extension + UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC903E29D0551100FB3634 /* Extension + UIAlertController.swift */; };
+		4DAC904229D5A84000FB3634 /* Extension + UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC904129D5A84000FB3634 /* Extension + UITableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +36,8 @@
 		4DAC903529D04B6300FB3634 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		4DAC903A29D054BA00FB3634 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		4DAC903C29D054E900FB3634 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
-		4DAC903E29D0551100FB3634 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		4DAC903E29D0551100FB3634 /* Extension + UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIAlertController.swift"; sourceTree = "<group>"; };
+		4DAC904129D5A84000FB3634 /* Extension + UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			children = (
 				4DAC902E29D04A3D00FB3634 /* ViewControllers */,
 				4DAC903229D04AEB00FB3634 /* Services */,
+				4DAC904029D5A7C100FB3634 /* Extension */,
 				4DAC902F29D04A7800FB3634 /* Models */,
 				4DAC903729D04B8200FB3634 /* Storyboards */,
 				4DAC903829D04C2900FB3634 /* App */,
@@ -86,7 +89,6 @@
 			children = (
 				4DAC903A29D054BA00FB3634 /* TaskListViewController.swift */,
 				4DAC903C29D054E900FB3634 /* TaskViewController.swift */,
-				4DAC903E29D0551100FB3634 /* AlertController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -124,6 +126,15 @@
 				4DAC901729D047C000FB3634 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		4DAC904029D5A7C100FB3634 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4DAC903E29D0551100FB3634 /* Extension + UIAlertController.swift */,
+				4DAC904129D5A84000FB3634 /* Extension + UITableViewCell.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +219,9 @@
 				4DAC903D29D054E900FB3634 /* TaskViewController.swift in Sources */,
 				4DAC903429D04B4C00FB3634 /* DataManager.swift in Sources */,
 				4DAC903629D04B6300FB3634 /* StorageManager.swift in Sources */,
-				4DAC903F29D0551100FB3634 /* AlertController.swift in Sources */,
+				4DAC903F29D0551100FB3634 /* Extension + UIAlertController.swift in Sources */,
 				4DAC901629D047C000FB3634 /* AppDelegate.swift in Sources */,
+				4DAC904229D5A84000FB3634 /* Extension + UITableViewCell.swift in Sources */,
 				4DAC901829D047C000FB3634 /* SceneDelegate.swift in Sources */,
 				4DAC903B29D054BA00FB3634 /* TaskListViewController.swift in Sources */,
 			);
